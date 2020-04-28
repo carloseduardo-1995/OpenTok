@@ -19,7 +19,7 @@ namespace OpenTokExemplo
         public MainPage()
         {
             InitializeComponent();
-             
+            NavigationPage.SetHasBackButton(this, false);
         }
 
 

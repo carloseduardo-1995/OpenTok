@@ -20,6 +20,7 @@ namespace OpenTokExemplo
                 return;
             }
             Navigation.PushAsync(new MainPage());
+            
         }
     }
 }
