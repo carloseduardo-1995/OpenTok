@@ -45,7 +45,20 @@ namespace OpenTokExemplo
         {
             DisplayAlert("Random message received", message, "OK");
         }
-
+        private void OnCamera(object sender, EventArgs e)
+        {
+            if (CrossOpenTok.Current.IsVideoPublishingEnabled == true)
+                CrossOpenTok.Current.IsVideoPublishingEnabled = false;
+            else
+                CrossOpenTok.Current.IsVideoPublishingEnabled = true;
+        }
+        private void OnMicrofone(object sender, EventArgs e)
+        {
+            if (CrossOpenTok.Current.IsAudioPublishingEnabled == true)
+                CrossOpenTok.Current.IsAudioPublishingEnabled = false;
+            else
+                CrossOpenTok.Current.IsAudioPublishingEnabled = true;
+        }
         
     }
 }

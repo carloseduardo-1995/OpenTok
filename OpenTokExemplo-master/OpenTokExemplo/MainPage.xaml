@@ -24,12 +24,15 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
         
             <Button Text="End Call" TextColor="Red" Grid.Row="0" Grid.Column="0" Clicked="OnEndCall" />
             <Button Text="Message" TextColor="Black" Grid.Row="0" Grid.Column="1" Clicked="OnMessage" />
             <Button Text="Swap Camera" TextColor="Purple" Grid.Row="0" Grid.Column="2" Clicked="OnSwapCamera" />
-        
+            <Button Text="Camera" TextColor="Blue" Grid.Row="0" Grid.Column="3" Clicked="OnCamera"/>
+            <Button Text="Microfone" TextColor="Green" Grid.Row="0" Grid.Column="4" Clicked="OnMicrofone"/>
         </Grid>
     </StackLayout>
 </ContentPage>
