@@ -110,6 +110,42 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon20.png">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\round_highlight_off_black_48dp.imageset\round_highlight_off_black_48dp%403x.png" />
+    <ImageAsset Include="Assets.xcassets\round_highlight_off_black_48dp.imageset\round_highlight_off_black_48dp%402x.png" />
+    <ImageAsset Include="Assets.xcassets\round_highlight_off_black_48dp.imageset\round_highlight_off_black_48dp.png" />
+    <ImageAsset Include="Assets.xcassets\round_highlight_off_black_48dp.imageset\Contents.json">
+      <Visible>False</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\round_videocam_black_48dp.imageset\round_videocam_black_48dp%403x.png" />
+    <ImageAsset Include="Assets.xcassets\round_videocam_black_48dp.imageset\round_videocam_black_48dp%402x.png" />
+    <ImageAsset Include="Assets.xcassets\round_videocam_black_48dp.imageset\round_videocam_black_48dp.png" />
+    <ImageAsset Include="Assets.xcassets\round_videocam_black_48dp.imageset\Contents.json">
+      <Visible>False</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\round_videocam_off_black_48dp.imageset\round_videocam_off_black_48dp%403x.png" />
+    <ImageAsset Include="Assets.xcassets\round_videocam_off_black_48dp.imageset\round_videocam_off_black_48dp%402x.png" />
+    <ImageAsset Include="Assets.xcassets\round_videocam_off_black_48dp.imageset\round_videocam_off_black_48dp.png" />
+    <ImageAsset Include="Assets.xcassets\round_videocam_off_black_48dp.imageset\Contents.json">
+      <Visible>False</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\round_mic_black_48dp.imageset\round_mic_black_48dp%403x.png" />
+    <ImageAsset Include="Assets.xcassets\round_mic_black_48dp.imageset\round_mic_black_48dp%402x.png" />
+    <ImageAsset Include="Assets.xcassets\round_mic_black_48dp.imageset\round_mic_black_48dp.png" />
+    <ImageAsset Include="Assets.xcassets\round_mic_black_48dp.imageset\Contents.json">
+      <Visible>False</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\round_mic_off_black_48dp.imageset\round_mic_off_black_48dp%403x.png" />
+    <ImageAsset Include="Assets.xcassets\round_mic_off_black_48dp.imageset\round_mic_off_black_48dp%402x.png" />
+    <ImageAsset Include="Assets.xcassets\round_mic_off_black_48dp.imageset\round_mic_off_black_48dp.png" />
+    <ImageAsset Include="Assets.xcassets\round_mic_off_black_48dp.imageset\Contents.json">
+      <Visible>False</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\round_flip_camera_ios_black_48dp.imageset\round_flip_camera_ios_black_48dp%403x.png" />
+    <ImageAsset Include="Assets.xcassets\round_flip_camera_ios_black_48dp.imageset\round_flip_camera_ios_black_48dp%402x.png" />
+    <ImageAsset Include="Assets.xcassets\round_flip_camera_ios_black_48dp.imageset\round_flip_camera_ios_black_48dp.png" />
+    <ImageAsset Include="Assets.xcassets\round_flip_camera_ios_black_48dp.imageset\Contents.json">
+      <Visible>False</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

@@ -11904,10 +11904,28 @@ namespace OpenTokExemplo.Droid
 			public const int notify_panel_notification_icon_bg = 2131165496;
 			
 			// aapt resource value: 0x7F070139
-			public const int tooltip_frame_dark = 2131165497;
+			public const int round_flip_camera_ios_black_48dp = 2131165497;
 			
 			// aapt resource value: 0x7F07013A
-			public const int tooltip_frame_light = 2131165498;
+			public const int round_highlight_off_black_48dp = 2131165498;
+			
+			// aapt resource value: 0x7F07013B
+			public const int round_mic_black_48dp = 2131165499;
+			
+			// aapt resource value: 0x7F07013C
+			public const int round_mic_off_black_48dp = 2131165500;
+			
+			// aapt resource value: 0x7F07013D
+			public const int round_videocam_black_48dp = 2131165501;
+			
+			// aapt resource value: 0x7F07013E
+			public const int round_videocam_off_black_48dp = 2131165502;
+			
+			// aapt resource value: 0x7F07013F
+			public const int tooltip_frame_dark = 2131165503;
+			
+			// aapt resource value: 0x7F070140
+			public const int tooltip_frame_light = 2131165504;
 			
 			static Drawable()
 			{

@@ -14,7 +14,8 @@ namespace OpenTokExemplo
     // by visiting https://aka.ms/xamarinforms-previewer
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
-    { 
+    {
+        bool InserePublisher = true;
         
         public MainPage()
         {

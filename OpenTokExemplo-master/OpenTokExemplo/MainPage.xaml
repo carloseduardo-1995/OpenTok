@@ -5,52 +5,56 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:tok="clr-namespace:Xamarin.Forms.OpenTok;assembly=Xamarin.Forms.OpenTok"
              xmlns:tokService="clr-namespace:Xamarin.Forms.OpenTok.Service;assembly=Xamarin.Forms.OpenTok"
-             mc:Ignorable="d" x:Class="OpenTokExemplo.MainPage">
-
-   <StackLayout>
-        <tok:OpenTokPublisherView HeightRequest="200" />
-        <StackLayout BindableLayout.ItemsSource="{Binding Path=StreamIdCollection, Source={x:Static tokService:CrossOpenTok.Current}}">
-            <BindableLayout.ItemTemplate>
-                <DataTemplate>
-                    <tok:OpenTokSubscriberView HeightRequest="200" StreamId="{Binding .}"/>
-                </DataTemplate>
-            </BindableLayout.ItemTemplate>
-        </StackLayout>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="80" />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
+             mc:Ignorable="d" x:Class="OpenTokExemplo.MainPage"
+             x:Name="this">
+    <ContentPage.Content>
+       <StackLayout>
+       
+                <tok:OpenTokPublisherView HeightRequest="200" />
+                <StackLayout BindableLayout.ItemsSource="{Binding Path=StreamIdCollection, Source={x:Static tokService:CrossOpenTok.Current}}">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <tok:OpenTokSubscriberView HeightRequest="200" StreamId="{Binding .}"/>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </StackLayout>
+          
+       
+           
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
         
-            <Button Text="End Call" TextColor="Red" Grid.Row="0" Grid.Column="0" Clicked="OnEndCall" />
-            <Button Text="Message" TextColor="Black" Grid.Row="0" Grid.Column="1" Clicked="OnMessage" />
-            <Button Text="Swap Camera" TextColor="Purple" Grid.Row="0" Grid.Column="2" Clicked="OnSwapCamera" />
-            <Button Text="Camera" TextColor="Blue" Grid.Row="0" Grid.Column="3" Clicked="OnCamera">
-                <Button.Triggers>
-                    <DataTrigger TargetType="Button"
-                                 Binding="{Binding Source={x:Static tokService:CrossOpenTok.Current},
-                                           Path=IsVideoPublishingEnabled}"
-                                           Value="False">
-                        <Setter Property="BackgroundColor" Value="Red"/>
-                    </DataTrigger>
-                </Button.Triggers>
-            </Button>
-            <Button Text="Microfone" TextColor="Green" Grid.Row="0" Grid.Column="4" Clicked="OnMicrofone">
-                <Button.Triggers>
-                    <DataTrigger TargetType="Button"
-                                 Binding="{Binding Source={x:Static tokService:CrossOpenTok.Current},
-                                           Path=IsAudioPublishingEnabled}"
-                                           Value="False">
-                        <Setter Property="BackgroundColor" Value="Red"/>
-                    </DataTrigger>
-                </Button.Triggers>
-            </Button>
-        </Grid>
-    </StackLayout>
+                <ImageButton Source="round_highlight_off_black_48dp" Grid.Row="0" Grid.Column="0" Clicked="OnEndCall" BackgroundColor="Transparent"/>
+                <ImageButton Source="round_flip_camera_ios_black_48dp" Grid.Row="0" Grid.Column="1" Clicked="OnSwapCamera" BackgroundColor="Transparent"/>
+                <ImageButton Source="round_videocam_off_black_48dp" Grid.Row="0" Grid.Column="2" Clicked="OnCamera" BackgroundColor="Transparent">
+                    <ImageButton.Triggers>
+                        <DataTrigger TargetType="ImageButton"
+                                     Binding="{Binding Source={x:Static tokService:CrossOpenTok.Current},
+                                               Path=IsVideoPublishingEnabled}"
+                                               Value="False">
+                            <Setter Property="Source" Value="round_videocam_black_48dp"/>
+                        </DataTrigger>
+                    </ImageButton.Triggers>
+                </ImageButton>
+                <ImageButton Source="round_mic_off_black_48dp" Grid.Row="0" Grid.Column="3" Clicked="OnMicrofone" BackgroundColor="Transparent">
+                    <ImageButton.Triggers>
+                        <DataTrigger TargetType="ImageButton"
+                                     Binding="{Binding Source={x:Static tokService:CrossOpenTok.Current},
+                                               Path=IsAudioPublishingEnabled}"
+                                               Value="False">
+                            <Setter Property="Source" Value="round_mic_black_48dp"/>
+                        </DataTrigger>
+                    </ImageButton.Triggers>
+                </ImageButton>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>
