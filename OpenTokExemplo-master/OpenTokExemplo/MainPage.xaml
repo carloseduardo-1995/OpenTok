@@ -8,53 +8,78 @@
              mc:Ignorable="d" x:Class="OpenTokExemplo.MainPage"
              x:Name="this">
     <ContentPage.Content>
-       <StackLayout>
-       
-                <tok:OpenTokPublisherView HeightRequest="200" />
-                <StackLayout BindableLayout.ItemsSource="{Binding Path=StreamIdCollection, Source={x:Static tokService:CrossOpenTok.Current}}">
-                    <BindableLayout.ItemTemplate>
-                        <DataTemplate>
-                            <tok:OpenTokSubscriberView HeightRequest="200" StreamId="{Binding .}"/>
-                        </DataTemplate>
-                    </BindableLayout.ItemTemplate>
-                </StackLayout>
+          <Grid>
+                   <Grid.RowDefinitions>
+                       <RowDefinition Height="200"/>
+                       <RowDefinition Height="*"/>
+                       <RowDefinition Height="Auto"/>
+                   </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="100"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnAbreMenu"
+                                              NumberOfTapsRequired="1"/>
+                    </Grid.GestureRecognizers>
+                   <CollectionView ItemsSource="{Binding Path=StreamIdCollection, Source={x:Static tokService:CrossOpenTok.Current}}"
+                                   Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="3">
+                       <CollectionView.ItemsLayout>
+                           <GridItemsLayout Orientation="Vertical" Span="1"/>
+                       </CollectionView.ItemsLayout>
+                       <CollectionView.ItemTemplate>
+                           <DataTemplate>
+                               <Grid>
+                               <Grid.RowDefinitions>
+                                   <RowDefinition Height="800"/>
+                               </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="420"/>
+                                </Grid.ColumnDefinitions>
+                                   <tok:OpenTokSubscriberView Grid.Row="0" Grid.Column="0" StreamId="{Binding .}"/>
+                           </Grid>
+                           </DataTemplate>
+                       </CollectionView.ItemTemplate>
+                   </CollectionView>
           
-       
-           
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="40" />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
+                    <tok:OpenTokPublisherView Grid.Row="0" Grid.Column="2"/>
+                    <ImageButton Source="round_flip_camera_ios_black_48dp" Grid.Row="0" Grid.Column="0" Clicked="OnSwapCamera" BackgroundColor="White"/>
+
+                <Grid x:Name="Botoes"
+                      Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
         
-                <ImageButton Source="round_highlight_off_black_48dp" Grid.Row="0" Grid.Column="0" Clicked="OnEndCall" BackgroundColor="Transparent"/>
-                <ImageButton Source="round_flip_camera_ios_black_48dp" Grid.Row="0" Grid.Column="1" Clicked="OnSwapCamera" BackgroundColor="Transparent"/>
-                <ImageButton Source="round_videocam_off_black_48dp" Grid.Row="0" Grid.Column="2" Clicked="OnCamera" BackgroundColor="Transparent">
-                    <ImageButton.Triggers>
-                        <DataTrigger TargetType="ImageButton"
-                                     Binding="{Binding Source={x:Static tokService:CrossOpenTok.Current},
-                                               Path=IsVideoPublishingEnabled}"
-                                               Value="False">
-                            <Setter Property="Source" Value="round_videocam_black_48dp"/>
-                        </DataTrigger>
-                    </ImageButton.Triggers>
-                </ImageButton>
-                <ImageButton Source="round_mic_off_black_48dp" Grid.Row="0" Grid.Column="3" Clicked="OnMicrofone" BackgroundColor="Transparent">
-                    <ImageButton.Triggers>
-                        <DataTrigger TargetType="ImageButton"
-                                     Binding="{Binding Source={x:Static tokService:CrossOpenTok.Current},
-                                               Path=IsAudioPublishingEnabled}"
-                                               Value="False">
-                            <Setter Property="Source" Value="round_mic_black_48dp"/>
-                        </DataTrigger>
-                    </ImageButton.Triggers>
-                </ImageButton>
-            </Grid>
-        </StackLayout>
+                    <ImageButton Source="round_highlight_off_black_48dp" Grid.Row="0" Grid.Column="1" Clicked="OnEndCall" BackgroundColor="Red" BorderColor="Red"/>
+                    
+                    <ImageButton Source="round_videocam_off_black_48dp" Grid.Row="0" Grid.Column="2" Clicked="OnCamera" BackgroundColor="White" BorderColor="White">
+                        <ImageButton.Triggers>
+                            <DataTrigger TargetType="ImageButton"
+                                         Binding="{Binding Source={x:Static tokService:CrossOpenTok.Current},
+                                                   Path=IsVideoPublishingEnabled}"
+                                                   Value="False">
+                                <Setter Property="Source" Value="round_videocam_black_48dp"/>
+                            </DataTrigger>
+                        </ImageButton.Triggers>
+                    </ImageButton>
+                    <ImageButton Source="round_mic_off_black_48dp" Grid.Row="0" Grid.Column="0" Clicked="OnMicrofone" BackgroundColor="White" BorderColor="White">
+                        <ImageButton.Triggers>
+                            <DataTrigger TargetType="ImageButton"
+                                         Binding="{Binding Source={x:Static tokService:CrossOpenTok.Current},
+                                                   Path=IsAudioPublishingEnabled}"
+                                                   Value="False">
+                                <Setter Property="Source" Value="round_mic_black_48dp"/>
+                            </DataTrigger>
+                        </ImageButton.Triggers>
+                    </ImageButton>
+                </Grid>
+          </Grid>
     </ContentPage.Content>
 </ContentPage>
