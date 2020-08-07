@@ -22,5 +22,10 @@ namespace OpenTokExemplo
             Navigation.PushAsync(new MainPage());
             
         }
+
+        void Button_Clicked(System.Object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new TestePagina());
+        }
     }
 }

@@ -1,11 +1,12 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="OpenTokExemplo.IniciarPage">
+             x:Class="OpenTokExemplo.TestePagina">
     <ContentPage.Content>
         <StackLayout VerticalOptions="Center">
-            <Button Text="Abrir o chat" Clicked="NavegarChat"></Button>
-            <Button Text="Teste Pagina" Clicked="Button_Clicked"/>
+            <Button Text="Spotify" Clicked="Button_Clicked"/>
+            <Button Text="Calm" Clicked="Calm_Button"/>
+            <Button Text="Podcast" Clicked="Podcast_Button"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
