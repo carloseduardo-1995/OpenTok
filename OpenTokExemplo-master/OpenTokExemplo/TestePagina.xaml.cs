@@ -20,10 +20,10 @@ namespace OpenTokExemplo
         }
         private async Task Abre_Spotify()
         {
-            var supportsUri = await Launcher.CanOpenAsync("spotify://");
+            var supportsUri = await Launcher.CanOpenAsync("spotify:");
             if (supportsUri)
             {
-                await Launcher.OpenAsync("spotify://");
+                await Launcher.OpenAsync("spotify:");
             }
             else
             {
