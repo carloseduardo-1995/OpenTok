@@ -38,5 +38,10 @@
 	<string>use camera to start video call</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>use microphone to start video call</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>lyft</string>
+		<string>fb</string>
+	</array>
 </dict>
 </plist>
