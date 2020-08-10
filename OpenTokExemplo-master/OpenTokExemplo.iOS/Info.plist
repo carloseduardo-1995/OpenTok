@@ -40,8 +40,8 @@
 	<string>use microphone to start video call</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
-		<string>lyft</string>
-		<string>fb</string>
+		<string>spotify</string>
+		<string>calm</string>
 	</array>
 </dict>
 </plist>
