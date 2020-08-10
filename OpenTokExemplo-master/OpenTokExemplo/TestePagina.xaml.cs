@@ -8,9 +8,27 @@ namespace OpenTokExemplo
 {
     public partial class TestePagina : ContentPage
     {
+        bool TestaSpotify;
+        bool TestaCalm;
         public TestePagina()
         {
             InitializeComponent();
+            Testa();
+        }
+
+        public async Task Testa()
+        {
+            TestaSpotify = await Launcher.CanOpenAsync("spotify:");
+            if (TestaSpotify)
+                SpotifyLab.Text = "(Available)";
+            else
+                SpotifyLab.Text = "(Install)";
+
+            TestaCalm = await Launcher.CanOpenAsync("calm://");
+            if (TestaCalm)
+                CalmLab.Text = "(Available)";
+            else
+                CalmLab.Text = "(Install)";
         }
 
         async void Button_Clicked(System.Object sender, System.EventArgs e)
@@ -20,10 +38,10 @@ namespace OpenTokExemplo
         }
         private async Task Abre_Spotify()
         {
-            var supportsUri = await Launcher.CanOpenAsync("spotify:");
-            if (supportsUri)
+
+            if (TestaSpotify)
             {
-                await Launcher.OpenAsync("spotify:");
+                await Launcher.OpenAsync("spotify:track:0pNeVovbiZHkulpGeOx1Gj");
             }
             else
             {
@@ -36,8 +54,8 @@ namespace OpenTokExemplo
 
         async void Calm_Button(System.Object sender, System.EventArgs e)
         {
-            var supportsUri = await Launcher.CanOpenAsync("calm://");
-            if (supportsUri)
+
+            if (TestaCalm)
             {
                 await Launcher.OpenAsync("calm://");
             }
@@ -47,22 +65,6 @@ namespace OpenTokExemplo
                     await Launcher.OpenAsync("http://play.google.com/store/apps/details?id=com.calm.android");
                 else
                     await Launcher.OpenAsync("http://appstore.com/calm");
-            }
-        }
-
-        async void Podcast_Button(System.Object sender, System.EventArgs e)
-        {
-            if (Device.RuntimePlatform == Device.Android)
-            {
-                var supportsUri = await Launcher.CanOpenAsync("http://podcasts.google.com");
-                if (supportsUri)
-                {
-                    await Launcher.OpenAsync("http://podcasts.google.com");
-                }
-                else
-                {
-                    await Launcher.OpenAsync("http://play.google.com/store/apps/details?id=com.google.android.apps.podcasts");
-                }
             }
         }
     }

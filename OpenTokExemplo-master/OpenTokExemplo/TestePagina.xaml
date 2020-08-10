@@ -1,12 +1,41 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="OpenTokExemplo.TestePagina">
+             x:Class="OpenTokExemplo.TestePagina"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="Black">
     <ContentPage.Content>
-        <StackLayout VerticalOptions="Center">
-            <Button Text="Spotify" Clicked="Button_Clicked"/>
-            <Button Text="Calm" Clicked="Calm_Button"/>
-            <Button Text="Podcast" Clicked="Podcast_Button"/>
-        </StackLayout>
+        <StackLayout VerticalOptions="Start">
+        <Label Text="Audio Streaming" TextColor="White" FontSize="20" Margin="0,0,0,140"
+               VerticalOptions="Start" HorizontalOptions="Center"/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+        
+                <ImageButton Source="https://i.pinimg.com/originals/7a/ec/a5/7aeca525afa2209807c15da821b2f2c6.png"
+                             Clicked="Button_Clicked"
+                             HeightRequest="100"
+                             WidthRequest="100"
+                             HorizontalOptions="Start"
+                             Grid.Row="0"
+                             Grid.Column="0"/>
+                <Label x:Name="SpotifyLab" Grid.Column="1" Grid.Row="0" TextColor="White" VerticalOptions="End"/> 
+
+                <ImageButton Source="https://vidaorganizada.com/wp-content/uploads/2020/02/Captura-de-Tela-2020-02-10-a%CC%80s-12.28.56.png"
+                             Clicked="Calm_Button"
+                             HeightRequest="100"
+                             WidthRequest="100"
+                             HorizontalOptions="Start"
+                             Grid.Row="1"
+                             Grid.Column="0"/>
+                <Label x:Name="CalmLab" Grid.Column="1" Grid.Row="1" TextColor="White" VerticalOptions="End"/>
+           </Grid>
+    </StackLayout>
     </ContentPage.Content>
 </ContentPage>
