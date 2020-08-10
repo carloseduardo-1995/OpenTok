@@ -48,7 +48,7 @@ namespace OpenTokExemplo
                 if (Device.RuntimePlatform == Device.Android)
                     await Launcher.OpenAsync("http://play.google.com/store/apps/details?id=com.spotify.music");
                 else
-                    await Launcher.OpenAsync("itms-apps://appstore.com/spotify/id324684580");
+                    await Launcher.OpenAsync("https://appstore.com/spotify/id324684580");
             }
         }
 
@@ -64,7 +64,7 @@ namespace OpenTokExemplo
                 if (Device.RuntimePlatform == Device.Android)
                     await Launcher.OpenAsync("http://play.google.com/store/apps/details?id=com.calm.android");
                 else
-                    await Launcher.OpenAsync("itms-apps://appstore.com/calm/id571800810");
+                    await Launcher.OpenAsync("https://appstore.com/calm/id571800810");
             }
         }
     }
